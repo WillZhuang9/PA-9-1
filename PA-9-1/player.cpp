@@ -91,11 +91,13 @@ int player::moveObj(sf::Vector2f pos, sf::Vector2f loc, int player, sf::Rectangl
         {
             if(checker[n][m].item.getPosition() == pos)
             {
+                
+                    
                 if (fabs(loc.x - checker[n][m].item.getPosition().x) == 32 && fabs(loc.y - checker[n][m].item.getPosition().y) == 32)
                 {
                     checker[n][m].location = loc;
                     checker[n][m].item.setPosition(checker[n][m].location);
-                    break;
+                    return 0;
                 }
                 
                 else if (fabs(loc.x - checker[n][m].item.getPosition().x) == 64 && fabs(loc.y - checker[n][m].item.getPosition().y) == 64 )
@@ -124,5 +126,5 @@ int player::moveObj(sf::Vector2f pos, sf::Vector2f loc, int player, sf::Rectangl
             }
         }
     }
-    return 0;
+    return -1;
 }
